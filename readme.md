@@ -61,10 +61,6 @@ AegisVault is a secure Java-based password manager that leverages advanced encry
 - All sensitive data is encrypted before storage.
 - Multi-layer encryption and steganography make brute-force and extraction attacks highly impractical.
 
-## License
-
-This project is licensed under the MIT License.
-
 ---
 
 > **AegisVault**: Your passwords, protected by cryptography and hidden in plain sight.
