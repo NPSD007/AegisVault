@@ -6,9 +6,9 @@ AegisVault is a secure Java-based password manager that leverages advanced encry
 
 - **Triple-Layer AES Encryption:**  
     - Encrypts passwords using CryptoX AES at three levels:  
-        - **AES Encryption**
-        - **Salted Hashing**
-        - **Encrypted Password (all Base64 encoded)**
+        - **AES Encryption (Base64)**
+        - **Salted Hashing (Base64)**
+        - **Encrypted Password (Base64)**
 - **Base64 to Binary Conversion:**  
     - Converts encrypted Base64 strings to binary bits for added security.
 - **Steganography:**  
