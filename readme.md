@@ -31,7 +31,7 @@ AegisVault is a secure Java-based password manager that leverages advanced encry
 
 ## Technologies Used
 
-- **Java 11+**
+- **Java 17+**
 - **CryptoX AES Library**
 - **Steganography Algorithms**
 - **Base64 Encoding/Decoding**
