@@ -281,10 +281,10 @@
 
 .action-btn {
     -fx-font-family: "Montserrat";
-    -fx-font-size: 13px;
+    -fx-font-size: 11px;
     -fx-background-radius: 6;
     -fx-cursor: hand;
-    -fx-padding: 6 15 6 15;
+    -fx-padding: 4 10 4 10;
     -fx-font-weight: bold;
 }
 
@@ -562,4 +562,9 @@
 
 .hyperlink:visited {
     -fx-text-fill: #70C8B7;
+}
+
+/* Field Labels */
+.field-label {
+    -fx-text-alignment: left;
 }

@@ -5,8 +5,6 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -28,13 +26,11 @@ public class SplashController implements Initializable {
     
     @FXML
     private ImageView medusaView;
-    
-    // NEW FXML fields
+
     @FXML
-    private ProgressBar progressBar;
+    private ImageView medusa20View;
     
-    @FXML
-    private Label loadingLabel;
+
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -51,15 +47,7 @@ public class SplashController implements Initializable {
         // Configure medusa image
         configureMedusaImage();
         
-        // NEW: Configure progress bar and loading text
-        if (progressBar != null) {
-            // Set to indeterminate progress for the initial load
-            progressBar.setProgress(ProgressBar.INDETERMINATE_PROGRESS); 
-        }
-        if (loadingLabel != null) {
-            loadingLabel.setText("Initializing components...");
-            // NOTE: Custom styling for the label must be in application.css
-        }
+
         
         // The transition logic is kept in Main.java, so no PauseTransition is needed here.
     }
@@ -110,16 +98,18 @@ public class SplashController implements Initializable {
     
     private void configureMedusaImage() {
         try {
-            // Updated to medusa.png (from the new FXML)
+            // Load medusa.png for the main image
             Image medusaImage = new Image(getClass().getResourceAsStream("/com/aegisvault/gui/images/medusa.png"));
             medusaView.setImage(medusaImage);
             medusaView.setFitWidth(400);
             medusaView.setFitHeight(400);
             medusaView.setPreserveRatio(true);
-            medusaView.setTranslateY(-30); 
+            medusaView.setTranslateY(-25);
+            medusaView.setOpacity(0.2);
+           
 
         } catch (Exception e) {
-            System.err.println("Could not load medusa.png: " + e.getMessage());
+            System.err.println("Could not load medusa images: " + e.getMessage());
         }
     }
 }

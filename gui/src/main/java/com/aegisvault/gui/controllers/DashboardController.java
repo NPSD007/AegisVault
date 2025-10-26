@@ -239,7 +239,7 @@ public class DashboardController implements Initializable {
 
                 viewBtn.setOnAction(e -> {
                     PasswordEntry entry = getTableView().getItems().get(getIndex());
-                    showPasswordDetails(entry);
+                    DashboardController.this.promptMasterPassword(entry);
                 });
 
                 editBtn.setOnAction(e -> {
@@ -262,13 +262,13 @@ public class DashboardController implements Initializable {
     }
 
     private void addSampleData() {
-        passwordData.add(new PasswordEntry("Google", "john.doe@gmail.com", "Personal", "Strong", "2024-10-20"));
-        passwordData.add(new PasswordEntry("Facebook", "johndoe", "Social", "Medium", "2024-10-15"));
-        passwordData.add(new PasswordEntry("Bank of America", "john_doe_123", "Finance", "Strong", "2024-10-25"));
-        passwordData.add(new PasswordEntry("LinkedIn", "john.doe", "Work", "Weak", "2024-09-30"));
-        passwordData.add(new PasswordEntry("Amazon", "johndoe@email.com", "Personal", "Strong", "2024-10-22"));
-        passwordData.add(new PasswordEntry("Netflix", "john.doe", "Personal", "Medium", "2024-10-18"));
-        passwordData.add(new PasswordEntry("GitHub", "johndoe123", "Work", "Strong", "2024-10-26"));
+        passwordData.add(new PasswordEntry("Google", "john.doe@gmail.com", "password123", "Personal", "Strong", "2024-10-20"));
+        passwordData.add(new PasswordEntry("Facebook", "johndoe", "password456", "Social", "Medium", "2024-10-15"));
+        passwordData.add(new PasswordEntry("Bank of America", "john_doe_123", "password789", "Finance", "Strong", "2024-10-25"));
+        passwordData.add(new PasswordEntry("LinkedIn", "john.doe", "passwordABC", "Work", "Weak", "2024-09-30"));
+        passwordData.add(new PasswordEntry("Amazon", "johndoe@email.com", "passwordDEF", "Personal", "Strong", "2024-10-22"));
+        passwordData.add(new PasswordEntry("Netflix", "john.doe", "passwordGHI", "Personal", "Medium", "2024-10-18"));
+        passwordData.add(new PasswordEntry("GitHub", "johndoe123", "passwordJKL", "Work", "Strong", "2024-10-26"));
     }
 
     private void updateStatistics() {
@@ -326,6 +326,7 @@ public class DashboardController implements Initializable {
                 return new PasswordEntry(
                     siteField.getText(),
                     usernameField.getText(),
+                    passwordField.getText(),
                     categoryCombo.getValue(),
                     "Strong", // Default strength
                     LocalDate.now().toString()
@@ -343,12 +344,59 @@ public class DashboardController implements Initializable {
         });
     }
 
+    private void promptMasterPassword(PasswordEntry entry) {
+        Dialog<String> dialog = new Dialog<>();
+        dialog.setTitle("Master Password Required");
+        dialog.setHeaderText("Enter your master password to view the password for " + entry.getSite());
+
+        // Applying dialog styling defined in application.css
+        dialog.getDialogPane().getStyleClass().add("dialog-pane");
+
+        ButtonType unlockButtonType = new ButtonType("Unlock", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(unlockButtonType, ButtonType.CANCEL);
+
+        PasswordField masterPasswordField = new PasswordField();
+        masterPasswordField.setPromptText("Master Password");
+
+        javafx.scene.layout.GridPane grid = new javafx.scene.layout.GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(20));
+
+        grid.add(new Label("Master Password:"), 0, 0);
+        grid.add(masterPasswordField, 1, 0);
+
+        dialog.getDialogPane().setContent(grid);
+
+        dialog.setResultConverter(dialogButton -> {
+            if (dialogButton == unlockButtonType) {
+                return masterPasswordField.getText();
+            }
+            return null;
+        });
+
+        Optional<String> result = dialog.showAndWait();
+        result.ifPresent(masterPassword -> {
+            // For now, assume any non-empty password is correct (in a real app, verify against stored hash)
+            if (masterPassword.equals("admin")) {
+                showPasswordDetails(entry);
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Invalid Password");
+                alert.setHeaderText(null);
+                alert.setContentText("Incorrect master password.");
+                alert.showAndWait();
+            }
+        });
+    }
+
     private void showPasswordDetails(PasswordEntry entry) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Password Details");
         alert.setHeaderText(entry.getSite());
         alert.setContentText(
             "Username: " + entry.getUsername() + "\n" +
+            "Password: " + entry.getPassword() + "\n" +
             "Category: " + entry.getCategory() + "\n" +
             "Strength: " + entry.getStrength() + "\n" +
             "Last Modified: " + entry.getLastModified()
@@ -357,10 +405,119 @@ public class DashboardController implements Initializable {
     }
 
     private void editPassword(PasswordEntry entry) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Edit Password");
-        alert.setContentText("Edit functionality for " + entry.getSite() + " (Not yet implemented)");
-        alert.showAndWait();
+        // Prompt for master password first
+        Dialog<String> dialog = new Dialog<>();
+        dialog.setTitle("Master Password Required");
+        dialog.setHeaderText("Enter your master password to edit the password for " + entry.getSite());
+
+        // Applying dialog styling defined in application.css
+        dialog.getDialogPane().getStyleClass().add("dialog-pane");
+
+        ButtonType unlockButtonType = new ButtonType("Unlock", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(unlockButtonType, ButtonType.CANCEL);
+
+        PasswordField masterPasswordField = new PasswordField();
+        masterPasswordField.setPromptText("Master Password");
+
+        javafx.scene.layout.GridPane grid = new javafx.scene.layout.GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(20));
+
+        grid.add(new Label("Master Password:"), 0, 0);
+        grid.add(masterPasswordField, 1, 0);
+
+        dialog.getDialogPane().setContent(grid);
+
+        dialog.setResultConverter(dialogButton -> {
+            if (dialogButton == unlockButtonType) {
+                return masterPasswordField.getText();
+            }
+            return null;
+        });
+
+        Optional<String> result = dialog.showAndWait();
+        result.ifPresent(masterPassword -> {
+            // For now, assume "admin" is correct (in a real app, verify against stored hash)
+            if (masterPassword.equals("admin")) {
+                showEditDialog(entry);
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Invalid Password");
+                alert.setHeaderText(null);
+                alert.setContentText("Incorrect master password.");
+                alert.showAndWait();
+            }
+        });
+    }
+
+    private void showEditDialog(PasswordEntry entry) {
+        Dialog<PasswordEntry> dialog = new Dialog<>();
+        dialog.setTitle("Edit Password");
+        dialog.setHeaderText("Edit password details for " + entry.getSite());
+
+        // Applying dialog styling defined in application.css
+        dialog.getDialogPane().getStyleClass().add("dialog-pane");
+
+        ButtonType saveButtonType = new ButtonType("Save", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(saveButtonType, ButtonType.CANCEL);
+
+        javafx.scene.layout.GridPane grid = new javafx.scene.layout.GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(20));
+
+        TextField siteField = new TextField(entry.getSite());
+        siteField.setPromptText("Website/App");
+        TextField usernameField = new TextField(entry.getUsername());
+        usernameField.setPromptText("Username");
+        PasswordField passwordField = new PasswordField();
+        passwordField.setText(entry.getPassword()); // Pre-fill password
+        passwordField.setPromptText("Password");
+        ComboBox<String> categoryCombo = new ComboBox<>();
+        categoryCombo.getItems().addAll("Personal", "Work", "Finance", "Social");
+        categoryCombo.setValue(entry.getCategory());
+
+        // Labels inside dialog
+        grid.add(new Label("Site:"), 0, 0);
+        grid.add(siteField, 1, 0);
+        grid.add(new Label("Username:"), 0, 1);
+        grid.add(usernameField, 1, 1);
+        grid.add(new Label("Password:"), 0, 2);
+        grid.add(passwordField, 1, 2);
+        grid.add(new Label("Category:"), 0, 3);
+        grid.add(categoryCombo, 1, 3);
+
+        dialog.getDialogPane().setContent(grid);
+
+        dialog.setResultConverter(dialogButton -> {
+            if (dialogButton == saveButtonType) {
+                return new PasswordEntry(
+                    siteField.getText(),
+                    usernameField.getText(),
+                    passwordField.getText(),
+                    categoryCombo.getValue(),
+                    "Strong", // Default strength, could be recalculated
+                    LocalDate.now().toString()
+                );
+            }
+            return null;
+        });
+
+        Optional<PasswordEntry> result = dialog.showAndWait();
+        result.ifPresent(updatedEntry -> {
+            // Update the entry in the lists
+            int index = passwordData.indexOf(entry);
+            if (index != -1) {
+                passwordData.set(index, updatedEntry);
+            }
+            int allIndex = allPasswordData.indexOf(entry);
+            if (allIndex != -1) {
+                allPasswordData.set(allIndex, updatedEntry);
+            }
+            updateStatistics();
+            filterPasswords(); // Refresh the filtered view
+        });
     }
 
     private void deletePassword(PasswordEntry entry) {
@@ -451,13 +608,15 @@ public class DashboardController implements Initializable {
     public static class PasswordEntry {
         private String site;
         private String username;
+        private String password;
         private String category;
         private String strength;
         private String lastModified;
 
-        public PasswordEntry(String site, String username, String category, String strength, String lastModified) {
+        public PasswordEntry(String site, String username, String password, String category, String strength, String lastModified) {
             this.site = site;
             this.username = username;
+            this.password = password;
             this.category = category;
             this.strength = strength;
             this.lastModified = lastModified;
@@ -465,16 +624,19 @@ public class DashboardController implements Initializable {
 
         public String getSite() { return site; }
         public void setSite(String site) { this.site = site; }
-        
+
         public String getUsername() { return username; }
         public void setUsername(String username) { this.username = username; }
-        
+
+        public String getPassword() { return password; }
+        public void setPassword(String password) { this.password = password; }
+
         public String getCategory() { return category; }
         public void setCategory(String category) { this.category = category; }
-        
+
         public String getStrength() { return strength; }
         public void setStrength(String strength) { this.strength = strength; }
-        
+
         public String getLastModified() { return lastModified; }
         public void setLastModified(String lastModified) { this.lastModified = lastModified; }
     }
