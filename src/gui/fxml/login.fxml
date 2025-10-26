@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="gui.controllers.LoginController"
+           prefWidth="1920.0" prefHeight="1080.0" minWidth="1920.0" minHeight="1080.0">
+    <children>
+        <!-- Fullscreen Background -->
+        <ImageView fitWidth="1920.0" fitHeight="1080.0" preserveRatio="false" pickOnBounds="true">
+            <image>
+                <Image url="@../images/bg.png" />
+            </image>
+        </ImageView>
+        
+        <!-- Centered Login Panel (fixed size) -->
+        <StackPane maxWidth="1194" maxHeight="715" prefWidth="1194" prefHeight="715">
+            <ImageView fitWidth="1194.0" fitHeight="715.0" preserveRatio="false">
+                <image>
+                    <Image url="@../images/login_bg.png" />
+                </image>
+            </ImageView>
+            
+            <!-- Main Layout - Horizontal Split -->
+            <HBox alignment="CENTER" spacing="50.0" prefWidth="1194.0" prefHeight="715.0">
+                <!-- Left Side - Logo -->
+                <VBox alignment="CENTER">
+                    <ImageView fx:id="medusaView" fitWidth="390" fitHeight="390" preserveRatio="true"/>
+                </VBox>
+                
+                <!-- Right Side - Login Form -->
+                <VBox alignment="CENTER" spacing="15.0" prefWidth="500.0">
+                    <!-- "Welcome to" text -->
+                    <Text fx:id="welcomeText" text="Welcome to">
+                        <font>
+                            <Font name="Montserrat" size="32.0"/>
+                        </font>
+                    </Text>
+                    
+                    <!-- title -->
+                    <Text fx:id="titleText" text="AegisVault">
+                        <font>
+                            <Font name="TaraType" size="106.0"/>
+                        </font>
+                    </Text>
+                    
+                    <!-- Fields + button -->
+                    <VBox spacing="15.0" alignment="CENTER">
+                        <VBox.margin>
+                            <Insets top="30.0"/>
+                        </VBox.margin>
+                        <TextField
+                            fx:id="usernameField"
+                            promptText="Username"
+                            prefWidth="360"
+                            maxWidth="360"
+                            minWidth="360"
+                            prefHeight="55.0" />
+                        <PasswordField
+                            fx:id="passwordField"
+                            promptText="Password"
+                            prefWidth="360"
+                            maxWidth="360"
+                            minWidth="360"
+                            prefHeight="55.0" />
+                        <Button fx:id="loginButton" text="Login" onAction="#handleLogin" 
+                                prefWidth="120" prefHeight="50.0" maxWidth="120" minWidth="120">
+                            <VBox.margin>
+                                <Insets top="10.0"/>
+                            </VBox.margin>
+                        </Button>
+                        <Text fx:id="blankField" text="Please fill in all fields!" visible="false">
+    						<font>
+        						<Font name="Montserrat" size="21.0"/>
+    						</font>
+						</Text>
+                    </VBox>
+                </VBox>
+            </HBox>
+        </StackPane>
+    </children>
+</StackPane>
