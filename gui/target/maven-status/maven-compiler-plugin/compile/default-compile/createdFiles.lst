@@ -1,0 +1,7 @@
+com\aegisvault\gui\controllers\DashboardController.class
+com\aegisvault\gui\Main.class
+com\aegisvault\gui\test.class
+com\aegisvault\gui\controllers\DashboardController$1.class
+com\aegisvault\gui\controllers\SplashController.class
+com\aegisvault\gui\controllers\LoginController.class
+com\aegisvault\gui\controllers\DashboardController$PasswordEntry.class

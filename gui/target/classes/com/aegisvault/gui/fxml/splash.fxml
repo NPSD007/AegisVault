@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Label?>
+
+<StackPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.aegisvault.gui.controllers.SplashController"
+           prefWidth="1920.0" prefHeight="1080.0" minWidth="1920.0" minHeight="1080.0">
+   <children>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0" preserveRatio="false" pickOnBounds="true">
+         <image>
+            <Image url="@../images/bg.png" />
+         </image>
+      </ImageView>
+    
+      <VBox alignment="CENTER" spacing="100.0"> <ImageView fx:id="medusaView" fitHeight="400.0" fitWidth="400.0" preserveRatio="true" />
+      
+        <VBox alignment="CENTER" spacing="4.0" translateY="-100.0"> <children>
+              <Text fx:id="titleText" strokeType="OUTSIDE" strokeWidth="0.0" text="AegisVault">
+                 <font>
+                    <Font name="TaraType" size="272.0" />
+                 </font>
+              </Text>
+              <Text fx:id="subtitleText" strokeType="OUTSIDE" strokeWidth="0.0" text="Not just secure, Aegis Secure">
+                 <font>
+                    <Font name="TaraType" size="64.0" />
+                 </font>
+              </Text>
+           </children>
+        </VBox>
+        
+        <VBox alignment="CENTER" spacing="15.0" prefWidth="400.0" translateY="120.0"> <ProgressBar fx:id="progressBar" prefWidth="350" prefHeight="8" styleClass="splash-progress"/>
+            <Label fx:id="loadingLabel" text="Loading your vault..." styleClass="loading-text"/>
+        </VBox>
+        
+      </VBox>
+      
+      <Label text="Version 1.0.0" styleClass="version-text" StackPane.alignment="BOTTOM_CENTER">
+          <padding>
+              <Insets bottom="20.0"/>
+          </padding>
+      </Label>
+   </children>
+</StackPane>
