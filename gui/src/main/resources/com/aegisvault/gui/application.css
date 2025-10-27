@@ -29,7 +29,7 @@
 /* AegisVault Title in Side Panel */
 .side-panel-title {
     -fx-font-family: "TaraType";
-    -fx-font-size: 28px;
+    -fx-font-size: 46px;
 }
 
 /* Side Panel Separator */
@@ -49,17 +49,19 @@
     -fx-background-radius: 8;
     -fx-border-radius: 8;
     -fx-alignment: center-left;
+    -fx-pref-width: 260px;
+    -fx-pref-height: 40px;
 }
 
 .menu-btn:hover {
     -fx-background-color: rgba(112, 200, 183, 0.2);
-    -fx-text-fill: #70C8B7;
+    -fx-text-fill: #04392e;
 }
 
 .menu-btn-active {
     -fx-background-color: rgba(112, 200, 183, 0.3);
-    -fx-text-fill: #70C8B7;
-    -fx-border-color: #70C8B7;
+    -fx-text-fill: #43a793;
+    -fx-border-color: #02211a;
     -fx-border-width: 0 0 0 4;
     -fx-font-weight: bold;
 }
@@ -75,6 +77,8 @@
     -fx-background-radius: 8;
     -fx-border-radius: 8;
     -fx-alignment: center-left;
+    -fx-pref-width: 260px;
+    -fx-pref-height: 40px;
 }
 
 .logout-btn:hover {
@@ -212,8 +216,9 @@
     -fx-font-weight: bold;
     -fx-background-radius: 10;
     -fx-cursor: hand;
-    -fx-padding: 12 30 12 30;
+    /*-fx-padding: 12 15 12 15;*/
     -fx-effect: dropshadow(gaussian, rgba(112, 200, 183, 0.5), 12, 0, 0, 4);
+    -fx-pref-height: 30px;
 }
 
 .add-btn:hover {
@@ -237,13 +242,13 @@
 }
 
 .password-table .column-header-background {
-    -fx-background-color: rgba(112, 200, 183, 0.15);
+    -fx-background-color: rgb(10, 144, 117);
     -fx-background-radius: 15 15 0 0;
 }
 
 .password-table .column-header {
     -fx-background-color: transparent;
-    -fx-text-fill: #70C8B7;
+    -fx-text-fill: #FFFFFF;
     -fx-font-family: "Montserrat";
     -fx-font-size: 15px;
     -fx-font-weight: bold;
@@ -252,7 +257,7 @@
 }
 
 .password-table .table-cell {
-    -fx-text-fill: #B8C5D0;
+    -fx-text-fill: #FFFFFF;
     -fx-font-family: "Montserrat";
     -fx-font-size: 14px;
     -fx-border-color: rgba(112, 200, 183, 0.1);

@@ -75,11 +75,7 @@ public class DashboardController implements Initializable {
     @FXML
     private Label totalPasswordsLabel;
 
-    @FXML
-    private Label weakPasswordsLabel;
 
-    @FXML
-    private Label strongPasswordsLabel;
 
     @FXML
     private TextField searchField;
@@ -99,8 +95,7 @@ public class DashboardController implements Initializable {
     @FXML
     private TableColumn<PasswordEntry, String> categoryColumn;
 
-    @FXML
-    private TableColumn<PasswordEntry, String> strengthColumn;
+
 
     @FXML
     private TableColumn<PasswordEntry, String> lastModifiedColumn;
@@ -144,7 +139,6 @@ public class DashboardController implements Initializable {
         siteColumn.setCellValueFactory(new PropertyValueFactory<>("site"));
         usernameColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
         categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
-        strengthColumn.setCellValueFactory(new PropertyValueFactory<>("strength"));
         lastModifiedColumn.setCellValueFactory(new PropertyValueFactory<>("lastModified"));
 
         // Set up actions column
@@ -184,7 +178,8 @@ public class DashboardController implements Initializable {
     }
     
     private void configureTitleText() {
-        titleText.setFont(Font.font("TaraType", 28));
+        titleText.setFont(Font.font("TaraType", 48));
+        titleText.setTranslateX(-10);
         titleText.setFill(
             new LinearGradient(
                 0, 0, 0, 1,
@@ -211,9 +206,11 @@ public class DashboardController implements Initializable {
         try {
             Image medusaImage = new Image(getClass().getResourceAsStream("/com/aegisvault/gui/images/medusa.png"));
             medusaLogoView.setImage(medusaImage);
-            medusaLogoView.setFitWidth(50);
-            medusaLogoView.setFitHeight(50);
+            medusaLogoView.setFitWidth(70);
+            medusaLogoView.setFitHeight(70);
             medusaLogoView.setPreserveRatio(true);
+            medusaLogoView.setTranslateX(-10);
+            medusaLogoView.setTranslateY(-5);
         } catch (Exception e) {
             System.err.println("Could not load medusa.png: " + e.getMessage());
         }
@@ -273,13 +270,9 @@ public class DashboardController implements Initializable {
 
     private void updateStatistics() {
         int totalPasswords = allPasswordData.size();
-        long weakCount = allPasswordData.stream().filter(p -> p.getStrength().equals("Weak")).count();
-        long strongCount = allPasswordData.stream().filter(p -> p.getStrength().equals("Strong")).count();
 
         totalVaultsLabel.setText("5");
         totalPasswordsLabel.setText(String.valueOf(totalPasswords));
-        weakPasswordsLabel.setText(String.valueOf(weakCount));
-        strongPasswordsLabel.setText(String.valueOf(strongCount));
     }
 
     @FXML

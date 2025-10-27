@@ -1,0 +1,6 @@
+com\aegisvault\steganography\StegoDecoder.class
+com\aegisvault\steganography\StegoOptions$PaddingMode.class
+com\aegisvault\steganography\StegoEncoder.class
+com\aegisvault\steganography\StegoEngine.class
+com\aegisvault\steganography\StegoOptions.class
+com\aegisvault\steganography\StegoTest.class

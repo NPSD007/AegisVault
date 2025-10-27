@@ -53,13 +53,13 @@
                         <VBox spacing="20.0" alignment="CENTER" prefWidth="360.0">
                             
                             <VBox spacing="10.0" alignment="CENTER">
-                                <Label text="Username" styleClass="field-label" />
+                                
                                 <TextField fx:id="usernameField" promptText="Enter username"
                                            prefWidth="360" maxWidth="360" minWidth="360" prefHeight="55.0"/>
                             </VBox>
 
                             <VBox spacing="10.0" alignment="CENTER">
-                                <Label text="Password" styleClass="field-label"/>
+                                
                                 <PasswordField fx:id="passwordField" promptText="Enter password"
                                                prefWidth="360" maxWidth="360" minWidth="360" prefHeight="55.0"/>
                             </VBox>
@@ -69,8 +69,8 @@
                             </HBox>
                             
                             <Button fx:id="loginButton" text="Login" onAction="#handleLogin" 
-                                    prefWidth="360" prefHeight="50.0" maxWidth="360" minWidth="360">
-                                <VBox.margin><Insets top="10.0"/></VBox.margin>
+                                    prefWidth="120" prefHeight="40.0" maxWidth="120" minWidth="120">
+                                <VBox.margin><Insets top="5.0"/></VBox.margin>
                             </Button>
 
                             <Text fx:id="blankField" text="Please fill in all fields!" visible="false">

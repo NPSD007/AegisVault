@@ -104,7 +104,7 @@ public class SplashController implements Initializable {
             medusaView.setFitWidth(400);
             medusaView.setFitHeight(400);
             medusaView.setPreserveRatio(true);
-            medusaView.setTranslateY(-25);
+            medusaView.setTranslateY(-30);
             medusaView.setOpacity(0.2);
            
 

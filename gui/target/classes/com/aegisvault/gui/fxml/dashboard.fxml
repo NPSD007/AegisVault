@@ -40,13 +40,13 @@
             <!-- Side Panel Content -->
             <VBox styleClass="side-panel">
                 <padding>
-                    <Insets top="20.0" right="10.0" bottom="20.0" left="10.0" />
+                    <Insets top="20.0" right="10.0" bottom="10.0" left="10.0" />
                 </padding>
                 <spacing>20.0</spacing>
 
                 <!-- Logo and Title -->
                 <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="logo-title-container">
-                    <ImageView fx:id="medusaLogoView" fitHeight="60.0" fitWidth="60.0" preserveRatio="true">
+                    <ImageView fx:id="medusaLogoView" fitHeight="100.0" fitWidth="100.0" preserveRatio="true">
                         <image>
                             <Image url="@../images/medusa.png" />
                         </image>
@@ -98,7 +98,7 @@
                         </graphic>
                     </Button>
                     
-                    <Button fx:id="generatorBtn" text="OLI Generator" styleClass="menu-btn" prefWidth="250" alignment="CENTER_LEFT">
+                    <Button fx:id="generatorBtn" text="Password Generator" styleClass="menu-btn" prefWidth="250" alignment="CENTER_LEFT">
                         <graphic>
                             <HBox spacing="10.0" alignment="CENTER_LEFT">
                                 <ImageView fitHeight="20.0" fitWidth="20.0" preserveRatio="true">
@@ -109,6 +109,7 @@
                             </HBox>
                         </graphic>
                     </Button>
+                
                     
                     <Button fx:id="securityBtn" text="Security Check" styleClass="menu-btn" prefWidth="250" alignment="CENTER_LEFT">
                         <graphic>
@@ -191,25 +192,7 @@
                     </ImageView>
                 </VBox>
                 
-                <VBox styleClass="stats-card" alignment="CENTER" spacing="10.0">
-                    <Label fx:id="weakPasswordsLabel" text="1" styleClass="stats-value-red" />
-                    <Label text="Weak Passwords" styleClass="stats-label" />
-                    <ImageView fitHeight="40.0" fitWidth="40.0" preserveRatio="true">
-                        <image>
-                            <Image url="@../images/weak-stat-icon.png" />
-                        </image>
-                    </ImageView>
-                </VBox>
-                
-                <VBox styleClass="stats-card" alignment="CENTER" spacing="10.0">
-                    <Label fx:id="strongPasswordsLabel" text="4" styleClass="stats-value-green" />
-                    <Label text="Strong Passwords" styleClass="stats-label" />
-                    <ImageView fitHeight="40.0" fitWidth="40.0" preserveRatio="true">
-                        <image>
-                            <Image url="@../images/strong-stat-icon.png" />
-                        </image>
-                    </ImageView>
-                </VBox>
+
             </HBox>
 
             <!-- Password Management Section -->
@@ -217,7 +200,7 @@
                 <HBox alignment="CENTER_LEFT" spacing="15.0">
                     <TextField fx:id="searchField" promptText="Search passwords..." styleClass="search-field" prefWidth="350.0" prefHeight="45.0" />
                     <ComboBox fx:id="filterComboBox" onAction="#filterPasswords" promptText="All" styleClass="filter-combo" prefWidth="180.0" prefHeight="45.0" />
-                    <Button fx:id="addPasswordBtn" text="+ Add New Password" onAction="#handleAddPassword" styleClass="add-btn" prefHeight="45.0" />
+                    <Button fx:id="addPasswordBtn" text="+ Add New Password" onAction="#handleAddPassword" styleClass="add-btn" prefHeight="35.0" />
                 </HBox>
 
                 <!-- Password Table -->
@@ -226,7 +209,6 @@
                         <TableColumn fx:id="siteColumn" text="Website/App" />
                         <TableColumn fx:id="usernameColumn" text="Username" />
                         <TableColumn fx:id="categoryColumn" text="Category" />
-                        <TableColumn fx:id="strengthColumn" text="Strength" />
                         <TableColumn fx:id="lastModifiedColumn" text="Last Modified" />
                         <TableColumn fx:id="actionsColumn" text="Actions" />
                     </columns>

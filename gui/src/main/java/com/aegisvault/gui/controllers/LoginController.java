@@ -60,6 +60,7 @@ public class LoginController implements Initializable {
         // Welcome text
         welcomeText.setFont(Font.font("Montserrat", 32));
         welcomeText.setFill(Color.web("#70C8B7")); // Teal color
+        welcomeText.setTranslateY(10);
         
         // Configure blank fields text
         blankField.setFont(Font.font("Montserrat", 21));
@@ -67,6 +68,7 @@ public class LoginController implements Initializable {
         
         // Configure title text 
         titleText.setFont(Font.font("TaraType", FontWeight.BOLD, 106));
+        titleText.setTranslateY(10);
         titleText.setFill(
             new LinearGradient(
                 0, 0, 0, 1, // vertical gradient top to bottom

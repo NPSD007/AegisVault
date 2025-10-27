@@ -1,0 +1,5 @@
+- [x] Remove Weak Passwords and Strong Passwords VBox elements from dashboard.fxml
+- [x] Remove weakPasswordsLabel and strongPasswordsLabel fields from DashboardController.java
+- [x] Update updateStatistics() method to remove weak and strong password calculations and label updates
+- [x] Remove Strength column from password table in dashboard.fxml
+- [x] Remove strengthColumn field and related code from DashboardController.java
