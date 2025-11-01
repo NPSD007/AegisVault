@@ -4,69 +4,87 @@
 
 ![AegisVault Logo](src/gui/images/medusa.png)
 
-**Your passwords, protected by military-grade cryptography and hidden in plain sight.**
+**Your passwords, encrypted with AES-256 and hidden in PNG images.**
 
 [![Java](https://img.shields.io/badge/Java-17+-blue.svg)](https://openjdk.java.net/)
 [![JavaFX](https://img.shields.io/badge/JavaFX-17+-green.svg)](https://openjfx.io/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Security](https://img.shields.io/badge/Security-AES--256--GCM-red.svg)](https://en.wikipedia.org/wiki/Galois/Counter_Mode)
 [![Release](https://img.shields.io/badge/Release-v1.0.0-brightgreen.svg)](https://github.com/NPSD007/AegisVault/releases)
 
 </div>
 
----
+## 🎯 What is AegisVault?
 
-## 🎯 **Overview**
+A password manager that doesn't just encrypt your passwords - it **hides them inside PNG images** using steganography. Your passwords are protected by AES-256-GCM encryption and virtually undetectable.
 
-AegisVault is a **production-ready password manager** that combines **AES-256-GCM encryption** with **steganographic concealment** to create an unprecedented level of security. Unlike traditional password managers, AegisVault doesn't just encrypt your passwords—it hides them inside innocent-looking PNG images, making them virtually undetectable.
+## ✨ Features
 
-> **✅ FULLY FUNCTIONAL** - Complete password management with add, view, edit, and delete operations
-> 
-> **🚀 READY TO USE** - Portable distribution available for immediate download
+- 🔐 **AES-256-GCM Encryption** + steganographic concealment
+- 🎨 **Modern Dark Theme** JavaFX interface
+-  **Portable** - No installation required (~110MB)
+- �️ **Full CRUD** - Add, view, edit, delete passwords
+- � **Master Password** protection for all operations
 
-## ✨ **Key Features**
+## 🚀 Quick Start
 
-### 🔐 **Triple-Layer Security Architecture**
-- **AES-256-GCM Encryption** with authenticated encryption
-- **PBKDF2 Key Derivation** (100,000+ iterations) with cryptographically secure salt
-- **Steganographic Concealment** in PNG images using LSB (Least Significant Bit) techniques
+### Download & Run
+1. **[Download AegisVault v1.0.0](https://github.com/NPSD007/AegisVault/releases)** (~110MB)
+2. **Extract** and run `Launch-AegisVault.bat`
+3. **Login** with password: `admin`
 
-### 🎨 **Modern JavaFX Interface**
-- **Dark Theme** with professional teal and gold accents
-- **Responsive Design** with smooth animations and transitions
-- **Intuitive UX** with master password protection for all operations
-- **Real-time Statistics** displaying password count and vault status
-
-### 🗃️ **Advanced Storage System**
-- **File-based Vault** with JSON metadata and encrypted image storage
-- **UUID-based Organization** for unique password entry identification
-- **Automatic Backup** and corruption recovery mechanisms
-- **Complete CRUD Operations** - Create, Read, Update, Delete password entries
-
-### 🔍 **Security Audit Trail**
-- **Console Logging** of all user actions (view, add, edit, delete)
-- **Master Password Verification** for sensitive operations
-- **Secure Memory Management** with automatic cleanup
-
-## 🚀 **Quick Start - Portable Version**
-
-### **📦 Download & Run (Recommended)**
-1. **Download** the latest release: [AegisVault v1.0.0 Portable](https://github.com/NPSD007/AegisVault/releases)
-2. **Extract** `AegisVault-v1.0.0-Portable.zip` to any folder
-3. **Run** `Launch-AegisVault.bat` or `AegisVault.bat`
-4. **Login** with master password: `admin`
-
-> **💡 No Installation Required!** - The portable version includes all JavaFX dependencies (~110MB)
-
-### **🛠️ Development Version**
+### Development
 ```bash
-# Clone the repository
 git clone https://github.com/NPSD007/AegisVault.git
 cd AegisVault
-
-# Run development version (requires Java 17+ and JavaFX)
-.\run.bat
+.\run.bat  # Requires Java 17+
 ```
+
+## 🔒 How It Works
+
+```
+Password → AES-256 Encryption → Steganographic Embedding → PNG Image
+```
+
+Your passwords are encrypted then hidden in image pixels using LSB steganography.
+
+## 📱 Usage
+
+- **Add**: Click "Add New Password" → Fill form → Save
+- **View**: Click "View" → Enter master password
+- **Edit**: Click "Edit" → Modify → Save
+- **Delete**: Click "Delete" → Confirm
+
+## �️ Tech Stack
+
+- **Language**: Java 17
+- **GUI**: JavaFX with custom dark theme
+- **Encryption**: AES-256-GCM with PBKDF2 key derivation
+- **Steganography**: LSB embedding in PNG format
+- **Storage**: File-based JSON vault
+
+## � Roadmap
+
+- [x] Core password manager (v1.0.0)
+- [ ] Password generator
+- [ ] Import/Export functionality
+- [ ] Multi-platform support
+- [ ] Browser extension
+
+## 🤝 Contributing
+
+1. Fork → Feature branch → Commit → Push → Pull Request
+
+## 📄 License
+
+MIT License - Free to use and modify.
+
+---
+
+<div align="center">
+
+**🛡️ Protecting your digital identity, one encrypted pixel at a time. 🛡️**
+
+</div>
 
 ## 📱 **Usage Guide**
 
