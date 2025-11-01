@@ -6,9 +6,9 @@ import javafx.animation.SequentialTransition;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 public class Main extends Application {
@@ -22,16 +22,34 @@ public class Main extends Application {
             Scene splashScene = new Scene(splashRoot);
             splashScene.setFill(javafx.scene.paint.Color.rgb(3,8,9,1));
 
-            // Remove window decorations
-            primaryStage.initStyle(StageStyle.UNDECORATED);
+            // --- IMPLEMENTATION: Load application.css for the splash scene ---
+            String cssPath = getClass().getResource("/gui/application.css").toExternalForm();
+            splashScene.getStylesheets().add(cssPath);
+
+            // Keep window decorations for standard window controls
             primaryStage.setScene(splashScene);
             primaryStage.setTitle("AegisVault");
             
-            // Set fixed size and center
-            primaryStage.setWidth(1920);
-            primaryStage.setHeight(1080);
-            primaryStage.centerOnScreen();
+            // Set application icon
+            try {
+                // Load multiple icon sizes for better display quality
+                Image icon32 = new Image(getClass().getResourceAsStream("/gui/images/medusa.png"));
+                Image icon16 = new Image(getClass().getResourceAsStream("/gui/images/medusa20.png"));
+                
+                primaryStage.getIcons().addAll(icon32, icon16);
+            } catch (Exception iconEx) {
+                System.err.println("Could not load application icon: " + iconEx.getMessage());
+            }
+
+            // Set optimal window size for desktop application
+            primaryStage.setWidth(1280);
+            primaryStage.setHeight(720);
+            primaryStage.setMinWidth(1280);
+            primaryStage.setMinHeight(720);
             primaryStage.setResizable(false);
+            
+            // Center the window on screen
+            primaryStage.centerOnScreen();
             
             primaryStage.show();
 
@@ -50,6 +68,9 @@ public class Main extends Application {
                     StackPane loginRoot = loginLoader.load();
                     Scene loginScene = new Scene(loginRoot);
                     loginScene.setFill(javafx.scene.paint.Color.rgb(3,8,9,1));
+                    
+                    // --- IMPLEMENTATION: Load application.css for the login scene ---
+                    loginScene.getStylesheets().add(cssPath); // Reuse the path variable
                     
                     primaryStage.setScene(loginScene);
 

@@ -1,24 +1,31 @@
 package gui.controllers;
 
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.TextField;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.Button;
-import javafx.scene.text.Text;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.LinearGradient;
-import javafx.scene.paint.CycleMethod;
-import javafx.scene.paint.Stop;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.image.ImageView;
-import javafx.scene.image.Image;
-import javafx.event.ActionEvent;
-
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.animation.FadeTransition;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.input.KeyCode;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.CycleMethod;
+import javafx.scene.paint.LinearGradient;
+import javafx.scene.paint.Stop;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class LoginController implements Initializable {
     
@@ -41,24 +48,29 @@ public class LoginController implements Initializable {
     private Button loginButton;
     
     @FXML
-    private Text blankField;
+    private Text blankField; 
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Load custom fonts 
-        Font.loadFont(getClass().getResourceAsStream("/gui/fonts/Montserrat.ttf"), 64);
+        
+        Font.loadFont(getClass().getResourceAsStream("/gui/fonts/Montserrat-Regular.ttf"), 64);
+        Font.loadFont(getClass().getResourceAsStream("/gui/fonts/Montserrat-Light.ttf"), 64);
         Font.loadFont(getClass().getResourceAsStream("/gui/fonts/TaraType.ttf"), 106);
         
-        // Welcome text
-        welcomeText.setFont(Font.font("Montserrat", 32));
-        welcomeText.setFill(Color.web("#70C8B7")); // Teal color
+        // --- RETAINED ORIGINAL STYLE CONFIGURATION ---
         
-        //configure blank fields text
-        blankField.setFont(Font.font("Montserrat", 21));
+        // Welcome text
+        welcomeText.setFont(Font.font("Montserrat Light", 24));
+        welcomeText.setFill(Color.web("#70C8B7")); // Teal color
+        welcomeText.setTranslateY(10);
+        
+        // Configure blank fields text
+        blankField.setFont(Font.font("Montserrat Light", 16));
         blankField.setFill(Color.web("#FF0000"));
         
         // Configure title text 
-        titleText.setFont(Font.font("TaraType", FontWeight.BOLD, 106));
+        titleText.setFont(Font.font("TaraType", FontWeight.BOLD, 80));
+        titleText.setTranslateY(10);
         titleText.setFill(
             new LinearGradient(
                 0, 0, 0, 1, // vertical gradient top to bottom
@@ -84,97 +96,14 @@ public class LoginController implements Initializable {
         try {
             Image medusaImage = new Image(getClass().getResourceAsStream("/gui/images/medusa.png"));
             medusaView.setImage(medusaImage);
-            medusaView.setFitWidth(390);
-            medusaView.setFitHeight(390);
+            medusaView.setFitWidth(200);
+            medusaView.setFitHeight(200);
             medusaView.setPreserveRatio(true);
         } catch (Exception e) {
             System.err.println("Could not load medusa.png: " + e.getMessage());
         }
         
-        // Style the input fields 
-        usernameField.setPromptText("Username");
-        usernameField.setPrefWidth(260);
-        usernameField.setPrefHeight(55);
-        usernameField.setStyle(
-        		"-fx-background-color: #3F340B; " +
-        			    "-fx-text-fill: #FFF; " +
-        			    "-fx-prompt-text-fill: rgba(255,255,255,0.55); " +
-        			    "-fx-font-family: 'Montserrat'; " +
-        			    "-fx-font-size: 18px; " +
-        			    "-fx-border-radius: 10px; " +
-        			    "-fx-background-radius: 10px; " +
-        			    "-fx-padding: 10px;"
-        );
-        
-        passwordField.setPromptText("Password");
-        passwordField.setPrefWidth(260);
-        passwordField.setPrefHeight(55);
-        passwordField.setStyle(
-        		"-fx-background-color: #3F340B; " +
-        			    "-fx-text-fill: #FFF; " +
-        			    "-fx-prompt-text-fill: rgba(255,255,255,0.55); " +
-        			    "-fx-font-family: 'Montserrat'; " +
-        			    "-fx-font-size: 18px; " +
-        			    "-fx-border-radius: 10px; " +
-        			    "-fx-background-radius: 10px; " +
-        			    "-fx-padding: 10px;"
-        );
-        //style the login button
-        loginButton.setPrefWidth(120);
-        loginButton.setPrefHeight(50);
-        loginButton.setStyle(
-        		"-fx-text-fill: #FFF;" +
-        		"-fx-font-family: 'Montserrat';" +
-        		"-fx-font-size: 22px;" +
-        		"-fx-font-weight: 650;" +
-        		"-fx-alignment: center;" +  
-        		"-fx-letter-spacing: -0.83px;" +
-            	"-fx-background-color: #3F340B;" +
-            	"-fx-border-radius: 40px;" +
-            	"-fx-background-radius: 40px;" +
-            	"-fx-border-width: 2.5px;" +
-            	"-fx-border-color: #D27E00;" +
-            	"-fx-padding: 7px 22px 7px 22px;" +
-            	"-fx-cursor: hand;"
-        );
-
-        //login button micro-animation
-        loginButton.setOnMouseEntered(e -> {
-            loginButton.setStyle(
-            		"-fx-text-fill: #FFF;" +
-                    		"-fx-font-family: 'Montserrat';" +
-                    		"-fx-font-size: 22px;" +
-                    		"-fx-font-weight: 650;" +
-                    		"-fx-alignment: center;" +  
-                    		"-fx-letter-spacing: -0.83px;" +
-                        	"-fx-background-color: #856900;" +
-                        	"-fx-border-radius: 40px;" +
-                        	"-fx-background-radius: 40px;" +
-                        	"-fx-border-width: 2.5px;" +
-                        	"-fx-border-color: #D27E00;" +
-                        	"-fx-padding: 7px 22px 7px 22px;" +
-                        	"-fx-cursor: hand;"
-            );
-        });
-        
-        loginButton.setOnMouseExited(e -> {
-            loginButton.setStyle(
-            		"-fx-text-fill: #FFF;" +
-                    		"-fx-font-family: 'Montserrat';" +
-                    		"-fx-font-size: 22px;" +
-                    		"-fx-font-weight: 650;" +
-                    		"-fx-alignment: center;" +  
-                    		"-fx-letter-spacing: -0.83px;" +
-                        	"-fx-background-color: #3F340B;" +
-                        	"-fx-border-radius: 40px;" +
-                        	"-fx-background-radius: 40px;" +
-                        	"-fx-border-width: 2.5px;" +
-                        	"-fx-border-color: #D27E00;" +
-                        	"-fx-padding: 7px 22px 7px 22px;" +
-                        	"-fx-cursor: hand;"
-            );
-        });
-     // Hide error message 
+        // Hide error message on key press
         usernameField.textProperty().addListener((obs, oldVal, newVal) -> {
             blankField.setVisible(false);
         });
@@ -182,19 +111,64 @@ public class LoginController implements Initializable {
         passwordField.textProperty().addListener((obs, oldVal, newVal) -> {
             blankField.setVisible(false);
         });
+        
+        // Add Enter key functionality for auto-login
+        usernameField.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                handleLogin(null);
+            }
+        });
+        
+        passwordField.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                handleLogin(null);
+            }
+        });
     }
+    
     @FXML
     private void handleLogin(ActionEvent event) {
         String username = usernameField.getText();
         String password = passwordField.getText();
         
         if (username.isEmpty() || password.isEmpty()) {
+            blankField.setText("Please fill in all fields!");
             blankField.setVisible(true);
             return;
         }
+        
         blankField.setVisible(false);
-        System.out.println("Login attempt - Username: " + username);
-        usernameField.clear();
-        passwordField.clear();
+        
+        // Simple authentication logic (User: admin, Pass: admin)
+        if (username.equals("admin") && password.equals("admin")) {
+            try {
+                // CORRECTED: Load the dashboard screen
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/fxml/dashboard.fxml"));
+                Parent root = loader.load();
+                
+                Stage stage = (Stage) usernameField.getScene().getWindow();
+                Scene scene = new Scene(root);
+                
+                // Ensure application.css is applied (although Main.java handles this, 
+                // it's safer to load it here for scene transitions too)
+                String cssPath = getClass().getResource("/gui/application.css").toExternalForm();
+                scene.getStylesheets().add(cssPath);
+                
+                // Fade transition
+                FadeTransition fadeIn = new FadeTransition(Duration.millis(500), root);
+                fadeIn.setFromValue(0.0);
+                fadeIn.setToValue(1.0);
+                
+                stage.setScene(scene);
+                fadeIn.play();
+                
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.err.println("Failed to load dashboard screen: " + e.getMessage());
+            }
+        } else {
+            blankField.setText("Invalid credentials!");
+            blankField.setVisible(true);
+        }
     }
 }

@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "AESTest",
+            "request": "launch",
+            "mainClass": "aes.AESTest",
+            "projectName": "AegisVault_f0ee0bda"
+        },
+{
+    "type": "java",
+    "name": "Main",
+    "request": "launch",
+    "mainClass": "gui.Main",
+    "projectName": "AegisVault_f0ee0bda",
+    "vmArgs": "--module-path \"C:/Users/asus/Downloads/openjfx-17.0.16_windows-x64_bin-sdk/javafx-sdk-17.0.16/lib\" --add-modules javafx.controls,javafx.fxml"
+},
+        {
+            "type": "java",
+            "name": "StegoEngine",
+            "request": "launch",
+            "mainClass": "steganography.StegoEngine",
+            "projectName": "AegisVault_f0ee0bda"
+        },
+        {
+            "type": "java",
+            "name": "StegoTest",
+            "request": "launch",
+            "mainClass": "steganography.StegoTest",
+            "projectName": "AegisVault_f0ee0bda"
+        }
+    ]
+}

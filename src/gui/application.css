@@ -1,1 +1,830 @@
-/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+/* ========================================
+   AEGISVAULT APPLICATION STYLES
+   ======================================== */
+
+/* Root Styling */
+.root {
+    -fx-background-color: rgb(3, 8, 9);
+    -fx-font-family: "Montserrat";
+}
+
+/* ========================================
+   SIDE PANEL STYLES
+   ======================================== */
+
+/* Side Panel Container */
+.side-panel {
+    -fx-background-color: linear-gradient(to right, rgba(15, 25, 30, 0.98), rgba(20, 30, 35, 0.95));
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 20, 0, 5, 0);
+    -fx-border-color: rgba(112, 200, 183, 0.2);
+    -fx-border-width: 0 1 0 0;
+}
+
+/* Logo and Title Container */
+.logo-title-container {
+    -fx-alignment: center-left;
+    -fx-padding: 15 0 15 20;
+}
+
+/* AegisVault Title in Side Panel */
+.side-panel-title {
+    -fx-font-family: "TaraType";
+    -fx-font-size: 28px;
+}
+
+/* Side Panel Separator */
+.side-separator {
+    -fx-background-color: rgba(112, 200, 183, 0.3);
+    -fx-padding: 1 0 1 0;
+}
+
+/* Menu Buttons */
+.menu-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #B8C5D0;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 16px;
+    -fx-padding: 12 15 12 20;
+    -fx-cursor: hand;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-alignment: center-left;
+    -fx-pref-width: 260px;
+    -fx-pref-height: 40px;
+}
+
+.menu-btn:hover {
+    -fx-background-color: rgba(112, 200, 183, 0.2);
+    -fx-text-fill: #04392e;
+}
+
+.menu-btn-active {
+    -fx-background-color: rgba(112, 200, 183, 0.3);
+    -fx-text-fill: #43a793;
+    -fx-font-weight: bold;
+}
+
+/* Logout Button */
+.logout-btn {
+    -fx-background-color: rgba(220, 53, 69, 0.2);
+    -fx-text-fill: #FF6B7A;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 16px;
+    -fx-padding: 12 15 12 20;
+    -fx-cursor: hand;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-alignment: center-left;
+    -fx-pref-width: 260px;
+    -fx-pref-height: 40px;
+}
+
+.logout-btn:hover {
+    -fx-background-color: rgba(220, 53, 69, 0.4);
+    -fx-text-fill: #FF4757;
+}
+
+/* ========================================
+   MAIN CONTENT STYLES
+   ======================================== */
+
+.main-content {
+    -fx-padding: 20;
+    -fx-background-color: transparent;
+    -fx-alignment: center;
+}
+
+/* Welcome Text */
+.welcome-text {
+    -fx-text-fill: #70C8B7;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+/* ========================================
+   STATISTICS CARDS
+   ======================================== */
+
+.stats-card {
+    -fx-background-color: rgba(20, 30, 35, 0.8);
+    -fx-background-radius: 12;
+    -fx-padding: 20 25 20 25;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 4);
+    -fx-spacing: 8;
+    -fx-alignment: center;
+    -fx-min-width: 180;
+    -fx-pref-width: 180;
+    -fx-max-width: 180;
+}
+
+.stats-card:hover {
+    -fx-background-color: rgba(25, 35, 40, 0.9);
+    -fx-effect: dropshadow(gaussian, rgba(112, 200, 183, 0.4), 18, 0, 0, 8);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.stats-value-blue {
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 38px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #70C8B7;
+}
+
+.stats-value-dark {
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 38px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #B8C5D0;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+.stats-value-red {
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 38px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FF6B7A;
+}
+
+.stats-value-green {
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 38px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4CAF50;
+}
+
+.stats-label {
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 13px;
+    -fx-text-fill: #8B98A5;
+    -fx-padding: 3 0 0 0;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+/* ========================================
+   SEARCH AND FILTER CONTROLS
+   ======================================== */
+
+/* Search Field */
+.search-field {
+    -fx-background-color: rgba(20, 30, 35, 0.8);
+    -fx-text-fill: #B8C5D0;
+    -fx-prompt-text-fill: #6B7780;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(112, 200, 183, 0.4);
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 10 15 10 15;
+    -fx-alignment: center;
+}
+
+.search-field:focused {
+    -fx-border-color: #70C8B7;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(112, 200, 183, 0.3), 8, 0, 0, 0);
+}
+
+/* Filter ComboBox */
+.filter-combo {
+    -fx-background-color: rgba(20, 30, 35, 0.8);
+    -fx-text-fill: #B8C5D0;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(112, 200, 183, 0.4);
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-alignment: center;
+}
+
+.filter-combo:hover {
+    -fx-border-color: #70C8B7;
+}
+
+.filter-combo .list-cell {
+    -fx-background-color: rgba(20, 30, 35, 0.95);
+    -fx-text-fill: #B8C5D0;
+}
+
+.filter-combo .list-cell:hover {
+    -fx-background-color: rgba(112, 200, 183, 0.2);
+    -fx-text-fill: #70C8B7;
+}
+
+/* Add Password Button */
+.add-btn {
+    -fx-background-color: rgba(112, 200, 183, 0.2);
+    -fx-text-fill: #70C8B7;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-cursor: hand;
+    -fx-padding: 10 15 10 15;
+    -fx-alignment: center;
+    -fx-pref-height: 35px;
+}
+
+.add-btn:hover {
+    -fx-background-color: rgba(112, 200, 183, 0.3);
+    -fx-text-fill: #5AB5A3;
+}
+
+/* ========================================
+   PASSWORD TABLE STYLES
+   ======================================== */
+
+.password-table {
+    -fx-background-color: rgba(20, 30, 35, 0.8);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(112, 200, 183, 0.4);
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 5);
+}
+
+.password-table .column-header-background {
+    -fx-background-color: rgb(10, 144, 117);
+    -fx-background-radius: 12 12 0 0;
+}
+
+.password-table .column-header {
+    -fx-background-color: transparent;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-border-color: rgba(112, 200, 183, 0.2);
+    -fx-padding: 15 10 15 10;
+}
+
+.password-table .table-cell {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 14px;
+    -fx-border-color: rgba(112, 200, 183, 0.1);
+    -fx-padding: 12 10 12 10;
+}
+
+.password-table .table-row-cell {
+    -fx-background-color: transparent;
+}
+
+.password-table .table-row-cell:hover {
+    -fx-background-color: rgba(112, 200, 183, 0.15);
+}
+
+.password-table .table-row-cell:selected {
+    -fx-background-color: rgba(112, 200, 183, 0.25);
+}
+
+.password-table .table-row-cell:selected .table-cell {
+    -fx-text-fill: #FFFFFF;
+}
+
+.password-table .corner {
+    -fx-background-color: rgb(10, 144, 117);
+}
+
+.password-table .filler {
+    -fx-background-color: rgba(20, 30, 35, 0.8);
+}
+
+.password-table .table-view {
+    -fx-background-color: transparent;
+}
+
+/* ========================================
+   ACTION BUTTONS IN TABLE
+   ======================================== */
+
+.action-btn {
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 11px;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-padding: 5 15 5 15;
+    -fx-font-weight: bold;
+    -fx-min-width: 70px;
+    -fx-pref-width: 70px;
+}
+
+.view-btn {
+    -fx-background-color: rgba(52, 152, 219, 0.3);
+    -fx-text-fill: #5DADE2;
+    -fx-border-color: #5DADE2;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+}
+
+.view-btn:hover {
+    -fx-background-color: rgba(52, 152, 219, 0.5);
+    -fx-text-fill: #FFFFFF;
+}
+
+.edit-btn {
+    -fx-background-color: rgba(241, 196, 15, 0.3);
+    -fx-text-fill: #F4D03F;
+    -fx-border-color: #F4D03F;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+}
+
+.edit-btn:hover {
+    -fx-background-color: rgba(241, 196, 15, 0.5);
+    -fx-text-fill: #FFFFFF;
+}
+
+.delete-btn {
+    -fx-background-color: rgba(231, 76, 60, 0.3);
+    -fx-text-fill: #EC7063;
+    -fx-border-color: #EC7063;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+}
+
+.delete-btn:hover {
+    -fx-background-color: rgba(231, 76, 60, 0.5);
+    -fx-text-fill: #FFFFFF;
+}
+
+/* ========================================
+   DIALOG STYLES
+   ======================================== */
+
+.dialog-pane {
+    -fx-background-color: rgba(20, 30, 35, 0.98);
+    -fx-background-radius: 15;
+    -fx-border-color: rgba(112, 200, 183, 0.6);
+    -fx-border-radius: 15;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 20, 0, 0, 10);
+    -fx-padding: 0;
+}
+
+.dialog-pane .label {
+    -fx-text-fill: #B8C5D0;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 14px;
+}
+
+.dialog-pane .text-field,
+.dialog-pane .password-field,
+.dialog-pane .combo-box {
+    -fx-background-color: rgba(30, 40, 45, 0.9);
+    -fx-text-fill: #B8C5D0;
+    -fx-prompt-text-fill: #6B7780;
+    -fx-border-color: rgba(112, 200, 183, 0.4);
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 15 10 15;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 14px;
+    -fx-min-width: 200px;
+    -fx-pref-width: 200px;
+}
+
+.dialog-pane .text-field:focused,
+.dialog-pane .password-field:focused {
+    -fx-border-color: #70C8B7;
+    -fx-border-width: 2;
+}
+
+.dialog-pane .combo-box:focused {
+    -fx-border-color: #70C8B7;
+    -fx-border-width: 2;
+}
+
+.dialog-pane .combo-box .list-cell {
+    -fx-background-color: rgba(30, 40, 45, 0.9);
+    -fx-text-fill: #B8C5D0;
+}
+
+.dialog-pane .combo-box .arrow-button {
+    -fx-background-color: rgba(112, 200, 183, 0.6);
+    -fx-background-radius: 0 8 8 0;
+}
+
+.dialog-pane .combo-box .arrow {
+    -fx-background-color: #B8C5D0;
+}
+
+.dialog-pane .button {
+    -fx-background-color: #70C8B7;
+    -fx-text-fill: white;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 14px;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-padding: 10 20 10 20;
+    -fx-min-width: 80px;
+    -fx-pref-width: 80px;
+}
+
+.dialog-pane .button:hover {
+    -fx-background-color: #5AB5A3;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.dialog-pane .button:pressed {
+    -fx-background-color: #4A9B8A;
+}
+
+.dialog-pane > .header-panel {
+    -fx-background-color: rgba(112, 200, 183, 0.2);
+    -fx-background-radius: 15 15 0 0;
+    -fx-padding: 15 20 15 20;
+}
+
+.dialog-pane > .header-panel > .label {
+    -fx-text-fill: #70C8B7;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Montserrat";
+}
+
+.dialog-pane > .content {
+    -fx-padding: 20;
+}
+
+.dialog-pane > .button-bar {
+    -fx-background-color: rgba(15, 25, 30, 0.8);
+    -fx-background-radius: 0 0 15 15;
+    -fx-padding: 15 20 15 20;
+}
+
+.dialog-pane > .button-bar > .container {
+    -fx-spacing: 10;
+}
+
+/* ========================================
+   ALERT STYLES
+   ======================================== */
+
+.alert {
+    -fx-background-color: rgba(20, 30, 35, 0.98);
+}
+
+.alert .dialog-pane {
+    -fx-background-color: rgba(20, 30, 35, 0.98);
+    -fx-background-radius: 15;
+    -fx-border-color: rgba(112, 200, 183, 0.6);
+    -fx-border-radius: 15;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 20, 0, 0, 10);
+    -fx-padding: 0;
+}
+
+.alert .label {
+    -fx-text-fill: #B8C5D0;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 14px;
+}
+
+.alert .label.content {
+    -fx-font-size: 14px;
+    -fx-padding: 15;
+    -fx-text-fill: #B8C5D0;
+    -fx-wrap-text: true;
+}
+
+.alert .header-panel {
+    -fx-background-color: rgba(112, 200, 183, 0.2);
+    -fx-background-radius: 15 15 0 0;
+    -fx-padding: 15 20 15 20;
+}
+
+.alert .header-panel .label {
+    -fx-text-fill: #70C8B7;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Montserrat";
+}
+
+.alert .button {
+    -fx-background-color: #70C8B7;
+    -fx-text-fill: white;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 14px;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-padding: 10 20 10 20;
+    -fx-min-width: 80px;
+}
+
+.alert .button:hover {
+    -fx-background-color: #5AB5A3;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.alert .button:pressed {
+    -fx-background-color: #4A9B8A;
+}
+
+.alert .button-bar {
+    -fx-background-color: rgba(15, 25, 30, 0.8);
+    -fx-background-radius: 0 0 15 15;
+    -fx-padding: 15 20 15 20;
+}
+
+.alert .button-bar .container {
+    -fx-spacing: 10;
+}
+
+/* Specific alert type styling */
+.alert.alert-information .header-panel {
+    -fx-background-color: rgba(112, 200, 183, 0.3);
+}
+
+.alert.alert-error .header-panel {
+    -fx-background-color: rgba(231, 76, 60, 0.3);
+}
+
+.alert.alert-error .header-panel .label {
+    -fx-text-fill: #E74C3C;
+}
+
+.alert.alert-confirmation .header-panel {
+    -fx-background-color: rgba(243, 156, 18, 0.3);
+}
+
+.alert.alert-confirmation .header-panel .label {
+    -fx-text-fill: #F39C12;
+}
+
+/* TextInputDialog specific styling */
+.text-input-dialog .dialog-pane {
+    -fx-background-color: rgba(20, 30, 35, 0.98);
+    -fx-background-radius: 15;
+    -fx-border-color: rgba(112, 200, 183, 0.6);
+    -fx-border-radius: 15;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 20, 0, 0, 10);
+}
+
+.text-input-dialog .text-field {
+    -fx-background-color: rgba(30, 40, 45, 0.9);
+    -fx-text-fill: #B8C5D0;
+    -fx-prompt-text-fill: #6B7780;
+    -fx-border-color: rgba(112, 200, 183, 0.4);
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 15 10 15;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 14px;
+}
+
+.text-input-dialog .button {
+    -fx-background-color: #70C8B7;
+    -fx-text-fill: white;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 14px;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-padding: 10 20 10 20;
+}
+
+.text-input-dialog .button:hover {
+    -fx-background-color: #5AB5A3;
+}
+
+/* ChoiceDialog specific styling */
+.choice-dialog .dialog-pane {
+    -fx-background-color: rgba(20, 30, 35, 0.98);
+    -fx-background-radius: 15;
+    -fx-border-color: rgba(112, 200, 183, 0.6);
+    -fx-border-radius: 15;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 20, 0, 0, 10);
+}
+
+.choice-dialog .combo-box {
+    -fx-background-color: rgba(30, 40, 45, 0.9);
+    -fx-text-fill: #B8C5D0;
+    -fx-border-color: rgba(112, 200, 183, 0.4);
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 15 10 15;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 14px;
+}
+
+.choice-dialog .button {
+    -fx-background-color: #70C8B7;
+    -fx-text-fill: white;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 14px;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-padding: 10 20 10 20;
+}
+
+.choice-dialog .button:hover {
+    -fx-background-color: #5AB5A3;
+}
+
+/* General styling for all dialog types to ensure consistency */
+.dialog-pane .content {
+    -fx-padding: 20;
+}
+
+.dialog-pane .expandable-content {
+    -fx-background-color: rgba(15, 25, 30, 0.8);
+    -fx-background-radius: 8;
+    -fx-padding: 15;
+    -fx-text-fill: #B8C5D0;
+}
+
+.dialog-pane .text-area {
+    -fx-control-inner-background: rgba(30, 40, 45, 0.9);
+    -fx-text-fill: #B8C5D0;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 14px;
+    -fx-border-color: rgba(112, 200, 183, 0.4);
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.dialog-pane .text-area:focused {
+    -fx-border-color: #70C8B7;
+    -fx-border-width: 2;
+}
+
+/* ========================================
+   LOGIN SCREEN STYLES
+   ======================================== */
+
+.field-label {
+    -fx-text-fill: #B8C5D0;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.normal-text {
+    -fx-text-fill: #8B98A5;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 14px;
+}
+
+.link-text {
+    -fx-text-fill: #70C8B7;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 14px;
+    -fx-underline: true;
+}
+
+.link-text:hover {
+    -fx-text-fill: #5AB5A3;
+}
+
+/* Error message styling for login */
+.error-text {
+    -fx-fill: #FF6B7A;
+    -fx-font-family: "Montserrat Light";
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* Text Fields on Login */
+.login-text-field, .login-password-field {
+    -fx-background-color: rgba(63, 52, 11, 1);
+    -fx-text-fill: #ffffff;
+    -fx-prompt-text-fill: rgba(201, 165, 31,.55);
+    -fx-font-family: "Montserrat Light";
+    -fx-font-size: 12px;
+    -fx-background-radius: 6;
+    -fx-border-color: rgba(136, 103, 5, 0.75);
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 8 12 8 12;
+    -fx-pref-width: 200;
+    -fx-max-width: 200;
+    -fx-pref-height: 35;
+}
+
+.login-text-field:focused, .login-password-field:focused {
+    -fx-border-color: rgba(220, 167, 6, 0.76);
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(112, 200, 183, 0.3), 8, 0, 0, 0);
+}
+
+/* Login Button */
+.login-button {
+    -fx-background-color: #3F340B;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+    -fx-alignment: center;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+    -fx-padding: 6 16 6 16;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(210, 126, 0, 1);
+    -fx-border-width: 2;
+    -fx-pref-width: 80;
+    -fx-max-width: 80;
+    -fx-pref-height: 30;
+}
+
+.login-button:hover {
+    -fx-background-color: #856900;
+}
+
+/* ========================================
+   SPLASH SCREEN STYLES
+   ======================================== */
+
+.splash-progress {
+    -fx-accent: #70C8B7;
+}
+
+.splash-progress .bar {
+    -fx-background-color: linear-gradient(to right, #70C8B7, #5AB5A3);
+    -fx-background-radius: 4;
+}
+
+.splash-progress .track {
+    -fx-background-color: rgba(112, 200, 183, 0.2);
+    -fx-background-radius: 4;
+}
+
+.loading-text {
+    -fx-text-fill: #70C8B7;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 16px;
+}
+
+.version-text {
+    -fx-text-fill: #6B7780;
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 12px;
+}
+
+/* ========================================
+   SCROLLBAR STYLES
+   ======================================== */
+
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: rgba(112, 200, 183, 0.5);
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: rgba(112, 200, 183, 0.7);
+}
+
+.scroll-bar .track {
+    -fx-background-color: rgba(20, 30, 35, 0.5);
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: #70C8B7;
+}
+
+/* ========================================
+   ADDITIONAL UTILITY STYLES
+   ======================================== */
+
+.separator {
+    -fx-background-color: rgba(112, 200, 183, 0.3);
+}
+
+.hyperlink {
+    -fx-text-fill: #70C8B7;
+    -fx-border-color: transparent;
+    -fx-underline: true;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: #5AB5A3;
+}
+
+.hyperlink:visited {
+    -fx-text-fill: #70C8B7;
+}
+
+/* Field Labels */
+.field-label {
+    -fx-text-alignment: left;
+}

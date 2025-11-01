@@ -1,17 +1,20 @@
 package gui.controllers;
 
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.text.Text;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.paint.*;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.image.ImageView;
-import javafx.scene.image.Image;
-
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.CycleMethod;
+import javafx.scene.paint.LinearGradient;
+import javafx.scene.paint.Stop;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 
 public class SplashController implements Initializable {
     
@@ -23,20 +26,30 @@ public class SplashController implements Initializable {
     
     @FXML
     private ImageView medusaView;
+
+    @FXML
+    private ImageView medusa20View;
+    
+
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Load custom font
         Font.loadFont(getClass().getResourceAsStream("/gui/fonts/Montserrat.ttf"), 64);
-        
-        // Configure title text
+        Font.loadFont(getClass().getResourceAsStream("/gui/fonts/TaraType.ttf"), 64);
+
+        // Configure title text (retains custom gradient/shadow)
         configureTitleText();
         
-        // Configure subtitle text
+        // Configure subtitle text (retains custom gradient/shadow)
         configureSubtitleText();
         
         // Configure medusa image
         configureMedusaImage();
+        
+
+        
+        // The transition logic is kept in Main.java, so no PauseTransition is needed here.
     }
     
     private void configureTitleText() {
@@ -85,16 +98,18 @@ public class SplashController implements Initializable {
     
     private void configureMedusaImage() {
         try {
-            Image medusaImage = new Image(getClass().getResourceAsStream("/gui/images/medusa20.png"));
+            // Load medusa.png for the main image
+            Image medusaImage = new Image(getClass().getResourceAsStream("/gui/images/medusa.png"));
             medusaView.setImage(medusaImage);
             medusaView.setFitWidth(400);
             medusaView.setFitHeight(400);
             medusaView.setPreserveRatio(true);
-            medusaView.setTranslateY(-30); 
-
+            medusaView.setTranslateY(-30);
+            medusaView.setOpacity(0.2);
+           
 
         } catch (Exception e) {
-            System.err.println("Could not load medusa.png: " + e.getMessage());
+            System.err.println("Could not load medusa images: " + e.getMessage());
         }
     }
 }
