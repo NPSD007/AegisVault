@@ -699,15 +699,15 @@
     -fx-text-fill: #ffffff;
     -fx-prompt-text-fill: rgba(201, 165, 31,.55);
     -fx-font-family: "Montserrat Light";
-    -fx-font-size: 12px;
-    -fx-background-radius: 6;
+    -fx-font-size: 16px;
+    -fx-background-radius: 8;
     -fx-border-color: rgba(136, 103, 5, 0.75);
-    -fx-border-radius: 8;
+    -fx-border-radius: 10;
     -fx-border-width: 1;
     -fx-padding: 8 12 8 12;
-    -fx-pref-width: 200;
-    -fx-max-width: 200;
-    -fx-pref-height: 35;
+    -fx-pref-width: 260;
+    -fx-max-width: 260;
+    -fx-pref-height: 45;
 }
 
 .login-text-field:focused, .login-password-field:focused {
@@ -721,7 +721,7 @@
     -fx-background-color: #3F340B;
     -fx-text-fill: #FFFFFF;
     -fx-font-family: "Montserrat";
-    -fx-font-size: 14px;
+    -fx-font-size: 16px;
     -fx-font-weight: normal;
     -fx-alignment: center;
     -fx-background-radius: 20;
@@ -730,9 +730,9 @@
     -fx-border-radius: 20;
     -fx-border-color: rgba(210, 126, 0, 1);
     -fx-border-width: 2;
-    -fx-pref-width: 80;
-    -fx-max-width: 80;
-    -fx-pref-height: 30;
+    -fx-pref-width: 105;
+    -fx-max-width: 105;
+    -fx-pref-height: 40;
 }
 
 .login-button:hover {

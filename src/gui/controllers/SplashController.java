@@ -37,6 +37,7 @@ public class SplashController implements Initializable {
         // Load custom font
         Font.loadFont(getClass().getResourceAsStream("/gui/fonts/Montserrat.ttf"), 64);
         Font.loadFont(getClass().getResourceAsStream("/gui/fonts/TaraType.ttf"), 64);
+        Font.loadFont(getClass().getResourceAsStream("/gui/fonts/Montserrat-Regular.ttf"), 64);
 
         // Configure title text (retains custom gradient/shadow)
         configureTitleText();
@@ -77,7 +78,7 @@ public class SplashController implements Initializable {
     }
     
     private void configureSubtitleText() {
-        subtitleText.setFont(Font.font("Montserrat", 64));
+        subtitleText.setFont(Font.font("TaraType", 70));
         subtitleText.setFill(
         	    new LinearGradient(
         	        0, 0, 0, 1,   // vertical gradient: top to bottom

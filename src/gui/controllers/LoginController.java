@@ -60,17 +60,17 @@ public class LoginController implements Initializable {
         // --- RETAINED ORIGINAL STYLE CONFIGURATION ---
         
         // Welcome text
-        welcomeText.setFont(Font.font("Montserrat Light", 24));
+        welcomeText.setFont(Font.font("Montserrat Light", 28));
         welcomeText.setFill(Color.web("#70C8B7")); // Teal color
-        welcomeText.setTranslateY(10);
+        welcomeText.setTranslateY(-10);
         
         // Configure blank fields text
-        blankField.setFont(Font.font("Montserrat Light", 16));
+        blankField.setFont(Font.font("Montserrat Light", 18));
         blankField.setFill(Color.web("#FF0000"));
         
         // Configure title text 
-        titleText.setFont(Font.font("TaraType", FontWeight.BOLD, 80));
-        titleText.setTranslateY(10);
+        titleText.setFont(Font.font("TaraType", FontWeight.BOLD, 95));
+        titleText.setTranslateY(-5);
         titleText.setFill(
             new LinearGradient(
                 0, 0, 0, 1, // vertical gradient top to bottom
@@ -96,8 +96,8 @@ public class LoginController implements Initializable {
         try {
             Image medusaImage = new Image(getClass().getResourceAsStream("/gui/images/medusa.png"));
             medusaView.setImage(medusaImage);
-            medusaView.setFitWidth(200);
-            medusaView.setFitHeight(200);
+            medusaView.setFitWidth(280);
+            medusaView.setFitHeight(280);
             medusaView.setPreserveRatio(true);
         } catch (Exception e) {
             System.err.println("Could not load medusa.png: " + e.getMessage());

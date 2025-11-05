@@ -1,4 +1,4 @@
-# 🛡️ AegisVault - Advanced Password Manager
+# AegisVault - Advanced Password Manager
 
 <div align="center">
 
@@ -15,7 +15,7 @@
 
 ---
 
-## 🎯 Overview
+## Overview
 
 **AegisVault** is a next-generation password manager that merges **AES-256-GCM encryption** with **steganographic concealment**. Unlike traditional password managers that simply encrypt data, AegisVault hides your encrypted credentials inside PNG images, making them visually indistinguishable and resistant to data leaks.
 
@@ -23,18 +23,18 @@ This project showcases strong cryptography, modern UI design, and file-based sec
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- 🔐 **Triple-Layer Security:** AES-256-GCM, PBKDF2 key derivation, and LSB steganography
-- 🎨 **Modern Interface:** Dark-themed JavaFX GUI with animations
-- 🗃️ **Complete CRUD Operations:** Add, view, edit, and delete credentials securely
-- 📁 **Portable:** Runs directly without installation
-- 🧩 **Security Logging:** Console audit trail for all vault operations
-- 🧱 **Master Password:** Required for every sensitive action
+- **Triple-Layer Security:** AES-256-GCM, PBKDF2 key derivation, and LSB steganography
+- **Modern Interface:** Dark-themed JavaFX GUI with animations
+- **Complete CRUD Operations:** Add, view, edit, and delete credentials securely
+- **Portable:** Runs directly without installation
+- **Security Logging:** Console audit trail for all vault operations
+- **Master Password:** Required for every sensitive action
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```text
 ┌───────────────────────────────────────────────┐
@@ -55,7 +55,7 @@ This project showcases strong cryptography, modern UI design, and file-based sec
 
 ---
 
-## 🔒 How It Works
+## How It Works
 
 1. **Master Password Derivation:** Uses PBKDF2-HMAC-SHA256 with 100,000+ iterations to derive a 256-bit encryption key.
 2. **AES Encryption:** Each password entry is encrypted using AES-256-GCM for authenticated encryption.
@@ -64,7 +64,7 @@ This project showcases strong cryptography, modern UI design, and file-based sec
 
 ---
 
-## 🧠 Technologies Used
+## Technologies Used
 
 | Component | Technology |
 |------------|-------------|
@@ -77,7 +77,7 @@ This project showcases strong cryptography, modern UI design, and file-based sec
 
 ---
 
-## 🚀 Installation
+## Installation
 
 ### **Portable Version (Recommended)**
 
@@ -86,11 +86,11 @@ This project showcases strong cryptography, modern UI design, and file-based sec
 3. **Run:** `Launch-AegisVault.bat`
 4. **Login:** Use default master password `admin`
 
-> 💡 Includes JavaFX runtime and dependencies. No Java installation required.
+> Includes JavaFX runtime and dependencies. No Java installation required.
 
 ---
 
-## 🧪 Development Setup
+## Development Setup
 
 ### **System Requirements**
 - Java 17+ (OpenJDK or Oracle JDK)
@@ -111,7 +111,7 @@ java -cp "src;%JAVAFX_PATH%/*" --module-path "%JAVAFX_PATH%" --add-modules javaf
 
 ---
 
-## ⚙️ Usage Guide
+## Usage Guide
 
 ### **Add Password**
 1. Click **Add New Password**
@@ -125,7 +125,7 @@ java -cp "src;%JAVAFX_PATH%/*" --module-path "%JAVAFX_PATH%" --add-modules javaf
 
 ---
 
-## 🧩 Project Structure
+## Project Structure
 
 ```text
 AegisVault/
@@ -140,7 +140,7 @@ AegisVault/
 
 ---
 
-## 🧪 Testing
+## Testing
 
 Run internal tests to verify encryption and steganography:
 
@@ -155,16 +155,16 @@ java -cp "src" steganography.StegoTest
 
 ---
 
-## 🧰 Security Validation
+## Security Validation
 
-✅ AES-256-GCM encryption verified via authenticated encryption
-✅ PBKDF2 key derivation produces consistent keys
-✅ PNG steganography statistically indistinguishable from original
-✅ Secure memory cleanup implemented for sensitive data
+ AES-256-GCM encryption verified via authenticated encryption
+ PBKDF2 key derivation produces consistent keys
+ PNG steganography statistically indistinguishable from original
+ Secure memory cleanup implemented for sensitive data
 
 ---
 
-## 🧭 Roadmap
+## Roadmap
 
 | Version | Features |
 |----------|-----------|
@@ -174,7 +174,7 @@ java -cp "src" steganography.StegoTest
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/AmazingFeature`
