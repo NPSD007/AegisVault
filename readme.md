@@ -48,8 +48,8 @@ This project showcases strong cryptography, modern UI design, and file-based sec
 │  - Vault Manager & File I/O                   │
 ├───────────────────────────────────────────────┤
 │                 Storage Layer                 │
-│  - JSON-based vault metadata                 │
-│  - Encrypted PNG image storage               │
+│  - JSON-based vault metadata                  │
+│  - Encrypted PNG image storage                │
 └───────────────────────────────────────────────┘
 ```
 
@@ -186,19 +186,13 @@ Please follow existing naming conventions and add unit tests for new code.
 
 ---
 
-## 📜 License
-
-Licensed under the **MIT License**. See the [LICENSE](LICENSE) file for full details.
-
----
-
-## ⚠️ Security Disclaimer
+## Security Disclaimer
 
 AegisVault uses industry-standard cryptography and steganography but is primarily an **educational and proof-of-concept project**. It has not undergone professional security auditing. Use responsibly and at your own discretion.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **JavaFX Team** – for the GUI framework
 - **OpenJDK Contributors** – for the modern Java platform
@@ -208,7 +202,7 @@ AegisVault uses industry-standard cryptography and steganography but is primaril
 
 <div align="center">
 
-**🛡️ AegisVault – Where Security Meets Steganography 🛡️**
+** AegisVault – Where Security Meets Steganography **
 
 *Protecting your digital identity, one encrypted pixel at a time.*
 
