@@ -202,7 +202,7 @@ AegisVault uses industry-standard cryptography and steganography but is primaril
 
 <div align="center">
 
-** AegisVault – Where Security Meets Steganography **
+**AegisVault – Where Security Meets Steganography**
 
 *Protecting your digital identity, one encrypted pixel at a time.*
 
