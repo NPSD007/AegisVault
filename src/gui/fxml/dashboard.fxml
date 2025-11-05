@@ -70,7 +70,7 @@
                         </graphic>
                     </Button>
                     
-                    <Button fx:id="generatorBtn" text="OLI Generator" styleClass="menu-btn" prefWidth="250" alignment="CENTER_LEFT">
+                    <Button fx:id="generatorBtn" text="Password Gen" styleClass="menu-btn" prefWidth="250" alignment="CENTER_LEFT">
                         <graphic>
                             <HBox spacing="10.0" alignment="CENTER_LEFT">
                                 <!-- Generator icon removed due to missing file -->
