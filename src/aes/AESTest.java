@@ -1,8 +1,8 @@
 package aes;
 
-import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+import javax.crypto.SecretKey;
 
 /**
  * AESTest - Standalone test demonstrating AES encryption functionality.
@@ -33,7 +33,7 @@ public class AESTest {
         AESEngine aes = new AESEngine();
         SecretKey key = aes.generateKey();
 
-        String original = "MySecurePassword123!";
+        String original = "Pass@123";
         String encrypted = aes.encryptString(original, key);
         String decrypted = aes.decryptString(encrypted, key);
 
@@ -52,7 +52,7 @@ public class AESTest {
         System.out.println("Test 2: Password-Based Key Derivation");
 
         AESEngine aes = new AESEngine();
-        char[] password = "MasterPassword123!".toCharArray();
+        char[] password = "Masterpass@123".toCharArray();
         byte[] salt = aes.generateSalt();
 
         SecretKey key1 = aes.deriveKeyFromPassword(password, salt);
